@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SG_ID="sg-0a012bf590d8a3629" # replace with your ID
-AMI_ID="ami-0220d79f3f480ecf55"
+AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_ID="Z098471117A571HPAR2GK"
 DOMAIN_NAME="pskrtech.online"
 
