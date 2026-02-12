@@ -67,7 +67,6 @@ systemctl enable backend  &>>$LOGS_FILE
 systemctl start backend
 VALIDATE $? "Starting and enabling backend"
 
-mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 -e 'load schema'
 if [ $? -ne 0 ]; then
 
     mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGS_FILE
