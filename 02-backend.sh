@@ -70,7 +70,7 @@ VALIDATE $? "Starting and enabling backend"
 dnf install mysql -y  &>>$LOGS_FILE
 VALIDATE $? "Installing MySQL"
 
-mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 'use cities'
+mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 'id'
 if [ $? -ne 0 ]; then
 
     mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGS_FILE
