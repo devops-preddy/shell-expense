@@ -52,8 +52,8 @@ VALIDATE $? "Moving to app directory"
 rm -rf /app/*
 VALIDATE $? "Removing existing code"
 
-unzip /tmp/expense-backend-v2.zip &>>$LOGS_FILE
-VALIDATE $? "Uzip catalogue code"
+unzip /tmp/backend.zip &>>$LOGS_FILE
+VALIDATE $? "Uzip backend code"
 
 npm install  &>>$LOGS_FILE
 VALIDATE $? "Installing dependencies"
