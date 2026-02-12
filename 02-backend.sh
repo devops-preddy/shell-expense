@@ -69,15 +69,16 @@ VALIDATE $? "Starting and enabling backend"
 
 dnf install mysql -y  &>>$LOGS_FILE
 VALIDATE $? "Installing MySQL"
+mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGS_FILE
+#if [ $? -ne 0 ]; then
 
-mysql -h $MYSQL_HOST -uroot -pExpenseApp@1
-if [ $? -ne 0 ]; then
-
-    mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGS_FILE
-    VALIDATE $? "Loaded data into MySQL"
-else
-    echo -e "data is already loaded ... $Y SKIPPING $N"
-fi
+    #mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$LOGS_FILE
+    #VALIDATE $? "Loaded data into MySQL"
+#else
+    #echo -e "data is already loaded ... $Y SKIPPING $N"
+#fi
 
 systemctl restart backend
 VALIDATE $? "Restarting backend"
+
+
