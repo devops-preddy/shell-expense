@@ -44,7 +44,7 @@ VALIDATE $? "Downloaded and unzipped frontend"
 
 rm -rf /etc/nginx/default.d/expense.conf
 
-cp $SCRIPT_DIR/nginx.conf /etc/nginx/default.d/expense.conf
+cp $SCRIPT_DIR/expense.conf /etc/nginx/default.d/expense.conf
 VALIDATE $? "Copied our nginx conf file"
 
 systemctl restart nginx
